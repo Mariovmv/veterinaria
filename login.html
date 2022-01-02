@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=divice-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Login</title>
+        <link rel="stylesheet" href="css/stylelogin.css" type="text/css">
+        <link href="css/all.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.css" rel="stylesheet">
+        <link href="css/solid.css" rel="stylesheet">
+        <script defer src="js/all.js"></script>
+    </head>
+    <body>
+        <form action="" class="login-form">
+            <h1>Bienvenido</h1>
+            <div class="textb">
+                <input type="text" required>
+                <div class="placeholder">Nombre de usuario</div>
+            </div>
+            <div class="textb">
+                <input type="password" required>
+                <div class="placeholder">Contraseña</div>
+                <div class="show-password fas fa-eye-slash"></div>
+            </div>
+            <button class="btn fas fa-arrow-right" onclick="location.href='index.html'"></button>
+        </form>
+
+
+
+
+        <script>
+            var fields = document.querySelectorAll(".textb input");
+            var btn = document.querySelector(".btn");
+            function check(){
+                if(fields[0].value != "" && fields[1].value != ""){
+                    btn.disabled = false;
+                }else{
+                    btn.disable= true;
+                }
+            }
+            fields[0].addEventListener("keyup", check);
+            fields[1].addEventListener("keyup",check);
+
+            document.querySelector(".show-password").addEventListener("click",
+            function(){
+                if(this.classList[2] == "fa-eye-slash"){
+                    this.classList.remove("fa-eye-slash");
+                    this.classList.add("fa-eye");
+                    fields[1].type = "text";
+                }else{
+                    this.classList.remove("fa-eye");
+                    this.classList.add("fa-eye-slash");
+                    fields[1].type = "password";
+                }
+            })
+        </script>
+    </body>
+</html>

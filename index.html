@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" charset="UTF-8"  content="width=divice-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="css/all.css" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/brands.css" rel="stylesheet">
+    <link href="css/solid.css" rel="stylesheet">
+    <script defer src="js/all.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fab fa-apple"></i></span>
+                        <span class="title"><h2>Veterinaria</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-clinic-medical"></i></span>
+                        <span class="title">Panel Clinico</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                        <span class="title">Tienda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-comment-dots"></i></span>
+                        <span class="title">Message</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-question-circle"></i></span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-unlock-alt"></i></span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="title">Sing Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div onclick="toggleMenu();">
+                    <a class="toggle" style="color: black;"><i class="fas fa-bars"></i></a>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Buscar">
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="img/user.png" width="60"/>
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="dataClinic">
+                    <div class="card">
+                        <div class="cardHEader">
+                            <div class="pet">
+                                <img src="img/petlogo.png">
+                            </div>
+                            <div class="info">
+                                <h4>Panfilo</h4>
+                                <h4>Datos del propietario</h4>
+                                <p>Leonardo de jesus Venabides Arellano</p>
+                                <p>Telefono: 3315348578</p>
+                            </div>
+                        </div>
+                        <div class="infos">
+                            <p>Correo: leovenavides@gmai.com</p>
+                            <p>Direccion: Avenida de los frambuesos</p>
+                            <p>Numero: 1486-A</p>
+                            <p>Colonia: Tabachines</p>
+                        </div>
+                    </div>
+
+                    <div class="detailmenu">
+                        <div class="menu">
+                            <ul>
+                                <li>
+                                    <a href="#" onclick="vacunas()">
+                                        <span class="title">Carnet de Vacunacion</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="historial()">
+                                        <span class="title">Historial Clinico</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="citas()">
+                                        <span class="title">Citas</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="estudios()">
+                                        <span class="title">Estudios</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="cirugias()">
+                                        <span class="title">Cirugias</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="dieta()">
+                                        <span class="title">Dieta</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="hospitalizacion()">
+                                        <span class="title">Hospitalizacion</span>
+                                    </a>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="vewDinamic">
+                    <div class="containerd" id="dinamico">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        function toggleMenu(){
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+        function vacunas(){
+            document.getElementById("dinamico").innerHTML =`
+            <div class="containerdinamic">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="title">Vacunas</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+            `;
+        };
+
+        function historial(){
+            document.getElementById("dinamico").innerHTML =`
+            <div class="containerdinamic">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="title">Hitorial Clinico</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+            `;
+        };
+
+        function citas(){
+            document.getElementById("dinamico").innerHTML =`
+            <div class="containerdinamic">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="title">Citas</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+            `;
+        };
+
+        function estudios(){
+            document.getElementById("dinamico").innerHTML =`
+            <div class="containerdinamic">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="title">Estudios</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+            `;
+        };
+
+        function cirugias(){
+            document.getElementById("dinamico").innerHTML =`
+            <div class="containerdinamic">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="title">Cirugias</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+            `;
+        };
+
+        function dieta(){
+            document.getElementById("dinamico").innerHTML =`
+            <div class="containerdinamic">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="title">Dieta</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+            `;
+        };
+
+        function hospitalizacion(){
+            document.getElementById("dinamico").innerHTML =`
+            <div class="containerdinamic">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="title">Hospitalizacion</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+            `;
+        };
+    </script>
+</body>
+</html>
